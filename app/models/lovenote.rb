@@ -1,0 +1,2 @@
+class Lovenote < ApplicationRecord
+end

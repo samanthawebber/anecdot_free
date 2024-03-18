@@ -1,0 +1,2 @@
+class Memento < ApplicationRecord
+end
