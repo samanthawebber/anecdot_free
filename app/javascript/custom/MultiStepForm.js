@@ -9,11 +9,6 @@ document.addEventListener("turbo:load", () => {
 
   showCurrentFormSection();
 
-  form.addEventListener('submit', function(event) {
-    event.preventDefault();
-    // Submit form or perform any other action you need
-  });
-
   function showCurrentFormSection() {
     formSections.forEach(function(section, index) {
       if (index === currentSectionIndex) {
@@ -56,12 +51,7 @@ document.addEventListener("turbo:load", () => {
 
   function goToNextSection() {
     currentSectionIndex++;
-    if (currentSectionIndex >= formSections.length) {
-      // Submit form if last section reached
-      form.submit();
-    } else {
-      showCurrentFormSection();
-    }
+    showCurrentFormSection();
   }
 
   function goToPreviousSection() {

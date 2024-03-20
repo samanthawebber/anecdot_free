@@ -70,3 +70,10 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem 'capistrano'
+gem 'capistrano-rails'
+gem 'capistrano-passenger'
+gem 'capistrano-rbenv'
+gem "ed25519", "~> 1.3"
+gem "bcrypt_pbkdf", "~> 1.1"
