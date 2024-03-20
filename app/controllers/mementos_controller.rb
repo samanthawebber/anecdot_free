@@ -21,7 +21,6 @@ class MementosController < ApplicationController
 
   # POST /mementos or /mementos.json
   def create
-    binding.irb
     @memento = Memento.new(memento_params)
 
     respond_to do |format|
