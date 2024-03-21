@@ -9,6 +9,21 @@ document.addEventListener("turbo:load", () => {
 
   showCurrentFormSection();
 
+  window.addEventListener('keydown', function(event) {
+    const key = event.key;
+
+    if (key === "Enter") {
+      console.log(key);
+      event.preventDefault();
+    }
+
+    if(key === "ArrowRight" || key === "Enter") {
+      goToNextSection();
+    } else if (key === "ArrowLeft") {
+      goToPreviousSection();
+    }
+  });
+
   function showCurrentFormSection() {
     formSections.forEach(function(section, index) {
       if (index === currentSectionIndex) {
@@ -50,7 +65,9 @@ document.addEventListener("turbo:load", () => {
   });
 
   function goToNextSection() {
-    currentSectionIndex++;
+    if (currentSectionIndex < formSections.length -1) {
+      currentSectionIndex++;
+    }
     showCurrentFormSection();
   }
 
