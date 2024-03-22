@@ -5,8 +5,6 @@ document.addEventListener("turbo:load", () => {
   const formSections       = document.querySelectorAll('.form-section');
   const nextButtons        = document.querySelectorAll('.next-button');
   const backButtons        = document.querySelectorAll('.back-button');
-  const firstNameInput     = document.getElementById('input_1');
-  var   first_name         = "their";
   var currentSectionIndex  = 0;
 
   showCurrentFormSection();
@@ -25,12 +23,7 @@ document.addEventListener("turbo:load", () => {
       goToPreviousSection();
     }
   });
-
-  firstNameInput.addEventListener('input', function() {
-    // Function to execute when input value changes
-    first_name = this.value; // Retrieve input value
-  });
-
+  
   function showCurrentFormSection() {
     formSections.forEach(function(section, index) {
       if (index === currentSectionIndex) {
