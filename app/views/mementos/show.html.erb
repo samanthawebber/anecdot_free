@@ -3,8 +3,12 @@
     <div class="aspect-[801/1036] w-[50.0625rem] bg-gradient-to-tr from-[#4078E0] to-[#5840E0] opacity-30" style="clip-path: polygon(63.1% 29.6%, 100% 17.2%, 76.7% 3.1%, 48.4% 0.1%, 44.6% 4.8%, 54.5% 25.4%, 59.8% 49.1%, 55.3% 57.9%, 44.5% 57.3%, 27.8% 48%, 35.1% 81.6%, 0% 97.8%, 39.3% 100%, 35.3% 81.5%, 97.2% 52.8%, 63.1% 29.6%)"></div>
   </div>
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <%= image_tag(@memento.main_image, alt: "Photo of #{@memento.fname}",
+        style: 'border-radius: 2%; height: intrinsic; width: 500px;
+                margin-left: 2em; margin-bottom: 2em;',
+        class: 'float-right') %>
     <h1 class="my-4 text-3xl font-merriweather tracking-tight text-gray-900 sm:text-4xl">The lifestory of <%= @memento.fname + ' ' + @memento.lname %></h1>
-    <div class="mt-16 max-w-2xl lg:mx-0 lg:mt-10 lg:max-w-none">
+    <div class="mt-8 sm:mt-16 max-w-2xl lg:mx-0 lg:mt-10 lg:max-w-none">
       <div class="w-2/3 text-base leading-7 text-gray-700">
         <p><span class="text-3xl font-merriweather tracking-tight text-gray-900 sm:text-4xl"><%= @memento.story["exposition"][0,1] %></span> <%= @memento.story["exposition"][1..-1] %></p>
         <p><%= @memento.story["rising_action"]%></p>

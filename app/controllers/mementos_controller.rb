@@ -23,6 +23,10 @@ class MementosController < ApplicationController
   def create
     @memento = Memento.new(memento_params)
 
+    if !params[:main_image].nil?
+      @memento.main_image.attach(params[:main_image])
+    end
+
     respond_to do |format|
       if @memento.save
         format.html { redirect_to memento_url(@memento), notice: "Memento was successfully created." }
@@ -65,6 +69,11 @@ class MementosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def memento_params
-      params.require(:memento).permit(:fname, :lname, story: [:exposition, :rising_action, :climax, :falling_action, :resolution])
+      params.require(:memento).permit(:fname, :lname, :nickname, :main_image,
+                                      story: [:exposition,
+                                              :rising_action,
+                                              :climax,
+                                              :falling_action,
+                                              :resolution])
     end
 end
