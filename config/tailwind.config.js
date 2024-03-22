@@ -15,10 +15,13 @@ module.exports = {
       },
       colors: {
         'lilac': '#4078E0',
+        'lilac-dark': '#205ac5',
         'lilac-deep': '#5840E0',
         'lilac-teal': '#40C8E0',
         'gold': '#E0A840',
         'magenta': '#E04078',
+        'magenta-deep': '#DB2364',
+        'magenta-mint': '#40E0A8',
         'gold': '#807700',
       },
     },
