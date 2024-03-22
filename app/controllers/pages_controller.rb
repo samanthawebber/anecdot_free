@@ -10,4 +10,7 @@ class PagesController < ApplicationController
 
   def how_it_works
   end
+
+  def start_memento
+  end
 end
