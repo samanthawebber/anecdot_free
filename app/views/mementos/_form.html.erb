@@ -23,46 +23,54 @@
     <div class="flex w-full mx-auto p-2 place-self-center flex-col gap-y-4">
       <div class="form-section" id="form_section_1">
         <div class="text-base leading-7 text-gray-700">
-          <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">What is your loved one's first name?</h1>
+          <h1 id="desc_1" class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">What is your loved one's first name?</h1>
           <%= form.text_field :fname, id: 'input_1', class: "mt-2 w-full border-t-0 border-l-0 border-r-0 border-b-1 focus:ring-0 border-lilac-deep placeholder-gray-300", placeholder: memento&.fname || "First name", autofocus: true %>
         </div>
+        <span class="text-sm leading-6 text-lilac-deep float-right" id="email-optional">Required</span>
       </div>
       <div class="form-section" id="form_section_2">
         <div class="text-base leading-7 text-gray-700">
-          <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">And last name?</h1>
+          <h1 id="desc_2" class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">And last name?</h1>
           <%= form.text_field :lname, id: 'input_2', class: "mt-2 w-full border-t-0 border-l-0 border-r-0 border-b-1 focus:ring-0 border-lilac-deep placeholder-gray-300", placeholder: memento&.lname || "Last name", autofocus: true %>
+        </div>
+        <span class="text-sm leading-6 text-lilac-deep float-right" id="email-optional">Required</span>
+      </div>
+      <div class="form-section" id="form_section_3">
+        <div class="text-base leading-7 text-gray-700">
+          <h1 id="desc_1" class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Were they known by any nickname?</h1>
+          <%= form.text_field :nickname, id: 'input_3', class: "mt-2 w-full border-t-0 border-l-0 border-r-0 border-b-1 focus:ring-0 border-lilac-deep placeholder-gray-300", placeholder: memento&.fname || "Nickname", autofocus: true %>
         </div>
       </div>
 
       <%= form.fields_for :story do |story_fields| %>
-        <div class="mt-12 form-section" id="form_section_3">
+        <div class="mt-12 form-section" id="form_section_4">
           <p class="text-lg font-semibold leading-8 tracking-tight text-lilac-deep placeholder-lilac-deep">Exposition</p>
-          <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Tell us about the beginning of their life. When and where were they born, and to whom? What were their early interests and hobbies?</h1>
-          <%= story_fields.text_area :exposition, id: 'input_3', class: "mt-2 w-full border-0 focus:ring-0 border-lilac-deep placeholder-text-gray-900", autofocus: true, rows: 10 %>
+          <h1 id="desc_3" class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Tell us about the beginning of their life. When and where were they born, and to whom? What were their early interests and hobbies?</h1>
+          <%= story_fields.text_area :exposition, id: 'input_4', class: "mt-2 w-full border-0 focus:ring-0 border-lilac-deep placeholder-text-gray-900", autofocus: true, rows: 10 %>
         </div>
-        <div class="mt-12 lg:mx-0 form-section" id="form_section_4">
+        <div class="mt-12 lg:mx-0 form-section" id="form_section_5">
           <p class="text-lg font-semibold leading-8 tracking-tight text-lilac-deep placeholder-lilac-deep">Rising action</p>
-          <h1 class="mt-2 text-3xl font-bold tracking-tight placeholder-gray-900 sm:text-4xl">How did their life progress? What were some challenges they faced? What path did they take?</h1>
-          <%= story_fields.text_area :rising_action, id: 'input_4', class: "mt-2 w-full border-0 focus:ring-0 border-lilac-deep", autofocus: true, rows: 10 %>
-        </div>
-        <div class="mt-12 max-w-2xl lg:mx-0 form-section" id="form_section_5">
-          <p class="text-lg font-semibold leading-8 tracking-tight text-lilac-deep placeholder-lilac-deep">Climax</p>
-          <h1 class="mt-2 text-3xl font-bold tracking-tight placeholder-gray-900 sm:text-4xl">Expand on some of the challenges or opportunities in their life. What were the high points, the climaxes?</h1>
-          <%= story_fields.text_area :climax, id: 'input_5', class: "mt-2 w-full border-0 focus:ring-0 border-lilac-deep", autofocus: true, rows: 10 %>
+          <h1 id="desc_4" class="mt-2 text-3xl font-bold tracking-tight placeholder-gray-900 sm:text-4xl">How did their life progress? What were some challenges they faced? What path did they take?</h1>
+          <%= story_fields.text_area :rising_action, id: 'input_5', class: "mt-2 w-full border-0 focus:ring-0 border-lilac-deep", autofocus: true, rows: 10 %>
         </div>
         <div class="mt-12 max-w-2xl lg:mx-0 form-section" id="form_section_6">
-          <p class="text-lg font-semibold leading-8 tracking-tight text-lilac-deep placeholder-lilac-deep">Falling action</p>
-          <h1 class="mt-2 text-3xl font-bold tracking-tight placeholder-gray-900 sm:text-4xl">How did their life continue after these high points?</h1>
-          <%= story_fields.text_area :falling_action, id: 'input_6', class: "mt-2 w-full border-0 focus:ring-0 border-lilac-deep", autofocus: true, rows: 10 %>
+          <p class="text-lg font-semibold leading-8 tracking-tight text-lilac-deep placeholder-lilac-deep">Climax</p>
+          <h1 id="desc_5" class="mt-2 text-3xl font-bold tracking-tight placeholder-gray-900 sm:text-4xl">Expand on some of the challenges or opportunities in their life. What were the high points, the climaxes?</h1>
+          <%= story_fields.text_area :climax, id: 'input_6', class: "mt-2 w-full border-0 focus:ring-0 border-lilac-deep", autofocus: true, rows: 10 %>
         </div>
         <div class="mt-12 max-w-2xl lg:mx-0 form-section" id="form_section_7">
+          <p class="text-lg font-semibold leading-8 tracking-tight text-lilac-deep placeholder-lilac-deep">Falling action</p>
+          <h1 id="desc_6" class="mt-2 text-3xl font-bold tracking-tight placeholder-gray-900 sm:text-4xl">How did their life continue after these high points?</h1>
+          <%= story_fields.text_area :falling_action, id: 'input_7', class: "mt-2 w-full border-0 focus:ring-0 border-lilac-deep", autofocus: true, rows: 10 %>
+        </div>
+        <div class="mt-12 max-w-2xl lg:mx-0 form-section" id="form_section_8">
           <p class="text-lg font-semibold leading-8 tracking-tight text-lilac-deep placeholder-lilac-deep">Resolution</p>
-          <h1 class="mt-2 text-3xl font-bold tracking-tight placeholder-gray-900 sm:text-4xl">Finally, tell us about the end of their life. Did their life end unexpectedly? How did they face their own death? Who was around them when they passed?</h1>
-          <%= story_fields.text_area :resolution, id: 'input_7', class: "mt-2 w-full border-0 focus:ring-0 border-lilac-deep", autofocus: true, rows: 10 %>
+          <h1 id="desc_7" class="mt-2 text-3xl font-bold tracking-tight placeholder-gray-900 sm:text-4xl">Finally, tell us about the end of their life. Did their life end unexpectedly? How did they face their own death? Who was around them when they passed?</h1>
+          <%= story_fields.text_area :resolution, id: 'input_8', class: "mt-2 w-full border-0 focus:ring-0 border-lilac-deep", autofocus: true, rows: 10 %>
         </div>
       <% end %>
 
-      <div class="place-self-center form-section" id="form_section_8">
+      <div class="place-self-center form-section" id="form_section_9">
         <%= form.submit class: "rounded-lg py-3 px-5 bg-lilac-deep text-white inline-block font-medium cursor-pointer" %>
       </div>
     </div>
